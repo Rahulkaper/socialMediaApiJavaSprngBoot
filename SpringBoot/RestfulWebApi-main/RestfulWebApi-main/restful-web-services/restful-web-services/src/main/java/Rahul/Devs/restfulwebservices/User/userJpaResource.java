@@ -59,6 +59,15 @@ public class userJpaResource {
         repository.deleteById(n);
 
     }
+    @GetMapping("/jpa/Users/posts/{n}")
+    public List<post> retrievePostOfAUser(@PathVariable int n) {
+        Optional<user> usr = repository.findById(n);
+        if (usr.isEmpty())
+            throw new UserNotFound("id:" + n);
+
+            return user.get().getPost();
+
+    }
 
     @PostMapping("/jpa/Users")
     public ResponseEntity<user> post(@RequestBody user usr) {

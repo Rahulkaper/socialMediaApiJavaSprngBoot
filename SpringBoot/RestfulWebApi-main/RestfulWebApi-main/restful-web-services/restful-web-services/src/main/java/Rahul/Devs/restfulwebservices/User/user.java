@@ -29,7 +29,15 @@ public class user {
    private List<posts> post;
 
 
- protected user(){
+ public List<posts> getPost() {
+    return post;
+}
+
+public void setPost(List<posts> post) {
+    this.post = post;
+}
+
+protected user(){
 
  }
 
