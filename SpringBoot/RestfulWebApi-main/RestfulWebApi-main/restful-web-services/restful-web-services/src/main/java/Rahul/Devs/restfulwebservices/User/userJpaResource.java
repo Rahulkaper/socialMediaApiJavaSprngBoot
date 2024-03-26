@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import Rahul.Devs.restfulwebservices.posts;
 import Rahul.Devs.restfulwebservices.jpa.userRepository;
 
 import java.net.URI;
@@ -59,13 +60,13 @@ public class userJpaResource {
         repository.deleteById(n);
 
     }
-    @GetMapping("/jpa/Users/posts/{n}")
-    public List<post> retrievePostOfAUser(@PathVariable int n) {
+     @GetMapping("/jpa/Users/posts/{n}")
+    public List<posts> retrievePostOfAUser(@PathVariable int n) {
         Optional<user> usr = repository.findById(n);
         if (usr.isEmpty())
             throw new UserNotFound("id:" + n);
 
-            return user.get().getPost();
+            return usr.get().getPost();
 
     }
 

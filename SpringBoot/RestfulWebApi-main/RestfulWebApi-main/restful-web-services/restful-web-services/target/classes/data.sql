@@ -24,6 +24,6 @@ values(1,1001,'My name is Rahul Kaper.
 I am leaarning SpringBooot');
 
 insert into posts(ID, USR_ID, DESCRIPTION)
-VALUES (2,1002, 'I would also like to learn DevOps,
+VALUES (2,1001, 'I would also like to learn DevOps,
 I knwo docker , CN, OOPS, OS, Kubernetes');
 
